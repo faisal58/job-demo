@@ -8,12 +8,48 @@
 </head>
 <body>
 
-<div class="field_with_errors">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<div id="head-nav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="fa fa-gear"></span>
+      </button>
+      <a class="navbar-brand" href="#"><span>Demo Job</span></a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right user-nav">
+        <li class="dropdown profile_menu">
+          <%= link_to 'Login', new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path %>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
 </div>
 
-<%= yield %>
+<div id="cl-wrapper">
+  <div class="container-fluid" id="pcont">
+    <% if notice.present? or alert.present?  %>
+    <div class="page-head">
+      <% if notice.present? %>
+          <div class="alert alert-info">
+            <p class="notice"><%= notice %></p>
+          </div>
+      <% end  %>
+      <% if alert.present?  %>
+          <div class="alert alert-warning">
+            <p class="notice"><%= alert %></p>
+          </div>
+      <% end  %>
+    </div>
+    <% end  %>
+    <div class="cl-mcont">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
