@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  enum role: [ :admin, :employer, :seeker ]
+  enum role: [ :guest, :employer, :seeker ]
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
