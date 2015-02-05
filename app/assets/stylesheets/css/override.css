@@ -1,0 +1,8 @@
+.r-alert {
+    display: block;
+    background: #fa1b00;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: #ffffff;
+}
