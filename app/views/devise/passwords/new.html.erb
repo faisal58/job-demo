@@ -1,16 +1,36 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="middle-login">
+      <div class="block-flat">
+        <div class="header">
+          <h3 class="text-center text-danger"><i class="fa fa-ban"></i> Forgot your password? </h3>
+        </div>
+        <div class="content">
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post, class: "form-horizontal"}) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-envelope"></i>
+              </span>
+                    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "your email" %>
+                  </div>
+                  <p class="text-danger"><%= resource.errors.full_messages.first %></p>
+                </div>
+                <div class="col-sm-4">
+                  <%= f.button class: "btn btn-primary btn-flat btn-block" do %>
+                      <i class="fa fa-envelope-o"></i> Send me instructions
+                  <% end %>
+                </div>
+              </div>
+              </div>
+              <%= render "shared/or" %>
+              <div class="content text-center">
+                <%= render "devise/shared/links" %>
+              </div>
+          <% end %>
+          </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
