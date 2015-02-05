@@ -18,12 +18,20 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right user-nav">
+        <% if ! user_signed_in?  %>
         <li class="dropdown profile_menu">
-          <%= link_to 'Login', new_user_session_path %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-sign-in"></i> Login
+          <% end %>
         </li>
+        <% end %>
+        <% if user_signed_in? %>
         <li>
-          <%= link_to 'Logout', destroy_user_session_path %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-power-off"></i> Logout
+          <% end %>
         </li>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -34,13 +42,21 @@
     <% if notice.present? or alert.present?  %>
     <div class="page-head">
       <% if notice.present? %>
-          <div class="alert alert-info">
-            <p class="notice"><%= notice %></p>
+          <div class="alert alert-info alert-white rounded">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <div class="icon">
+              <i class="fa fa-info-circle"></i>
+            </div>
+            <%= notice %>
           </div>
       <% end  %>
       <% if alert.present?  %>
-          <div class="alert alert-warning">
-            <p class="notice"><%= alert %></p>
+          <div class="alert alert-warning alert-white rounded">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <div class="icon">
+              <i class="fa fa-info-circle"></i>
+            </div>
+            <%= alert %>
           </div>
       <% end  %>
     </div>
