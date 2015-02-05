@@ -1,0 +1,45 @@
+<% if user_signed_in? %>
+
+ <ul class="nav navbar-nav">
+
+   <li <% if current_page?( controller: :home, action: :index ) %> class="active" <% end %> >
+     <%= link_to :root do %>
+         <i class="fa fa-home"></i> Home
+     <% end %>
+   </li>
+
+
+   <!-- Employer's Nav -->
+   <% if is_employer? %>
+
+   <li>
+     <%= link_to :root do %>
+         <i class="fa fa-th-large"></i> Jobs
+     <% end %>
+   </li>
+
+   <li>
+     <%= link_to :root do %>
+         <i class="fa fa-users"></i> Candidates
+     <% end %>
+   </li>
+
+   <% end %>
+
+
+   <!-- Seeker's Nav -->
+   <% if is_seeker? %>
+
+   <li>
+     <%= link_to :root do %>
+         <i class="fa fa-folder-open"></i> Open Positions
+     <% end %>
+   </li>
+
+   <% end %>
+
+
+
+ </ul>
+
+<% end %>

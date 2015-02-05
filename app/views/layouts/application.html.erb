@@ -17,6 +17,9 @@
       <a class="navbar-brand" href="#"><span>Demo Job</span></a>
     </div>
     <div class="navbar-collapse collapse">
+
+      <%= render 'shared/design/main_nav' %>
+
       <ul class="nav navbar-nav navbar-right user-nav">
         <% if ! user_signed_in?  %>
         <li class="dropdown profile_menu">

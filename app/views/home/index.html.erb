@@ -1,0 +1,5 @@
+<% if is_employer? %>
+    <%= render 'home/employer/index' %>
+<% elsif is_seeker? %>
+    <%= render 'home/seeker/index' %>
+<% end %>
