@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206052412) do
+ActiveRecord::Schema.define(version: 20150206052920) do
 
   create_table "company_types", force: true do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150206052412) do
     t.string   "company_logo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "employers", ["company_type_id"], name: "index_employers_on_company_type_id", using: :btree
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150206052412) do
     t.string   "resume_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "shortlists", force: true do |t|
