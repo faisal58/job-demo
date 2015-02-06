@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :employer
+  has_one :seeker
+  has_many :jobs
+  has_many :job_applications
+
   before_save :convert_role_if_needed
 
   # make
