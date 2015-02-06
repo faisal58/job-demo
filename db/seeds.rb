@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#Create Company Types
+CompanyType.create([{name: 'Public'},{name: 'Private'}])
+
+#Create Job Categories
+JobCategory.create([
+                       {name: 'Accounting'},
+                       {name: 'Banking & Finance'},
+                       {name: 'Engineering'},
+                       {name: 'Education'},
+                       {name: 'Government'},
+                       {name: 'Hotel - Hospitality'},
+                       {name: 'Information Technology'},
+                       {name: 'Insurance'},
+                       {name: 'Management'},
+                       {name: 'Marketing'},
+                       {name: 'Pharmaceutical'},
+                       {name: 'QA- Quality Control'},
+                       {name: 'Telecommunications'},
+                       {name: 'Training'},
+                       {name: 'Warehouse'},
+                       {name: 'Other'}
+                   ])
