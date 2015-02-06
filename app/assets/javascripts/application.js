@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require ../stylesheets/js/bootstrap.min
+//= require lib/jquery.gritter/js/jquery.gritter
 //= require_tree .

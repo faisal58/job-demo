@@ -1,5 +1,7 @@
 class CompanyType < ActiveRecord::Base
 
-  belongs_to :employer
+  has_many :employer
+
+  validates :name, :presence => true, :uniqueness => true
 
 end

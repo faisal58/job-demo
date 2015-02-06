@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1">
+      <div class="block-transparent">
+        <div class="tab-container">
+          <ul class="nav nav-tabs flat-tabs">
+            <li class="active"><a data-toggle="tab" href="#open-jobs"><i class="fa fa-folder-open-o"></i> Open Jobs </a></li>
+            <li><a data-toggle="tab" href="#all-jobs"><i class="fa fa-list"></i> All Jobs </a></li>
+            <li><a data-toggle="tab" href="#new-position"><i class="fa fa-plus"></i> Open new position </a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="open-jobs" class="tab-pane active cont fade in">
+              <%= render 'job/_partial/open' %>
+            </div>
+            <div id="all-jobs" class="tab-pane cont fade">
+              <%= render 'job/_partial/all' %>
+            </div>
+            <div id="new-position" class="tab-pane fade">
+              <%= render 'job/_partial/new' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

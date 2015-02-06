@@ -1,0 +1,18 @@
+var saved = <%= @saved %>;
+
+if ( saved )
+{
+    $.gritter.add({
+        title: 'Success',
+        text: 'Great! Your job has been saved successfully',
+        class_name: 'success'
+    });
+}
+else
+{
+    $.gritter.add({
+        title: 'Error!!',
+        text: 'Opps! Your data not saved properly.',
+        class_name: 'danger'
+    });
+}

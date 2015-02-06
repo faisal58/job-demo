@@ -1,8 +1,10 @@
 .r-alert {
     display: block;
-    background: #fa1b00;
-    padding: 5px 15px;
-    font-size: 12px;
-    font-weight: bolder;
+    background: #fa776a;
+    padding: 0 15px;
+    line-height: 18px;
+    vertical-align: middle;
+    font-size: 12px !important;
+    font-weight: bold !important;
     color: #ffffff;
 }
