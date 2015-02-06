@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206031112) do
+ActiveRecord::Schema.define(version: 20150206032010) do
 
   create_table "company_types", force: true do |t|
     t.string "name"
   end
 
   add_index "company_types", ["name"], name: "index_company_types_on_name", unique: true, using: :btree
+
+  create_table "employers", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company_name"
+    t.integer  "company_type_id"
+    t.string   "company_website"
+    t.string   "company_logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employers", ["company_type_id"], name: "index_employers_on_company_type_id", using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "role"
