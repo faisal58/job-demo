@@ -11,12 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204101615) do
+ActiveRecord::Schema.define(version: 20150206031112) do
+
+  create_table "company_types", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "company_types", ["name"], name: "index_company_types_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "role"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
