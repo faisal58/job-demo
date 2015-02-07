@@ -42,3 +42,4 @@ gem 'spring',        group: :development
 gem 'devise'
 gem "cancan"
 gem 'faker'
+gem 'jquery-ui-rails', '~> 5.0.3'

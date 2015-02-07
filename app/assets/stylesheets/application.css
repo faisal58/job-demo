@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require ../javascripts/lib/jquery.gritter/css/jquery.gritter
+ *= require jquery-ui
  *= require_self
  */
 

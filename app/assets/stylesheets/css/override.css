@@ -8,3 +8,7 @@
     font-weight: bold !important;
     color: #ffffff;
 }
+
+.text-danger {
+    color: #fa776a;
+}

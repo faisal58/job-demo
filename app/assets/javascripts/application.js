@@ -12,7 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require ../stylesheets/js/bootstrap.min
 //= require lib/jquery.gritter/js/jquery.gritter
 //= require_tree .
+
+var gritter = function(title, message, errorLevel)
+{
+    $.gritter.add({
+        title: title,
+        text: message,
+        class_name: errorLevel == 0 ? 'success' : 'danger'
+    });
+};
