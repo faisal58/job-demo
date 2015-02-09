@@ -18,7 +18,13 @@ var activeTab = function(tabname) {
 $(function() {
 
     var new_job = $('#new_job');
-
+    var open_jobs = $('#open_jobs_table');
+    var all_jobs = $('#all_jobs_table');
+    var job_row = '<tr>' +
+                    '<td style="width:30%;">{title}</td>' +
+                    '<td>{application_deadline}</td>' +
+                    '<td class="text-right"><span class="badge badge-warning">0</span></td>' +
+                  '</tr>';
     new_job.submit(function (e) {
         $.ajax({
             url : 'jobs',
@@ -28,6 +34,8 @@ $(function() {
             success : function(data) {
                 gritter('Success', 'Great! Your job has been saved successfully', 0);
                 reset_form(new_job);
+                open_jobs.find('tbody').append(nano(job_row, data));
+                all_jobs.find('tbody').append(nano(job_row, data));
                 activeTab('open-jobs');
             },
             error: function(xhr) {

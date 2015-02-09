@@ -1,14 +1,14 @@
 class JobController < ApplicationController
 
-  include ApplicationHelper
+  include ApplicationHelper, JobHelper
   before_action :authenticate_user!
 
   def index
     if is_employer?
       #all jobs
-      @all_jobs_by_employers = Job.find_by_user_id(current_user.id)
+      @jobs = current_user.jobs
       #all open jobs
-      @all_open_jobs = find_open_jobs(@all_jobs_by_employers)
+      @open_jobs = find_open_jobs(@jobs)
       #create new job
       @job = Job.new
       @job_categories = JobCategory.all

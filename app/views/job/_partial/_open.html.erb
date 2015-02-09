@@ -1,1 +1,10 @@
-<h2 class="r-alert">No Open Position</h2>
+<% if @open_jobs.present? %>
+    <h3 class="spacer-bottom-sm">All Open Jobs</h3>
+    <div class="block-flat no-padding">
+      <div class="content">
+        <%= render 'job/_partial/row', :jobs => @open_jobs, :table_id => "open_jobs_table" %>
+      </div>
+    </div>
+<% else %>
+    <h2 class="r-alert">No Open Position Available</h2>
+<% end %>

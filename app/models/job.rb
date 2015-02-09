@@ -1,5 +1,6 @@
 class Job < ActiveRecord::Base
 
+  has_many :job_applications
   belongs_to :user
   belongs_to :job_category
 

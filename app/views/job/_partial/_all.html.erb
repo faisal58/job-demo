@@ -1,0 +1,10 @@
+<% if @jobs.present? %>
+    <h3 class="spacer-bottom-sm">All Jobs</h3>
+    <div class="block-flat no-padding">
+      <div class="content">
+        <%= render 'job/_partial/row', :jobs => @jobs, :table_id => "all_jobs_table" %>
+      </div>
+    </div>
+<% else %>
+    <h2 class="r-alert">No Position Available</h2>
+<% end %>

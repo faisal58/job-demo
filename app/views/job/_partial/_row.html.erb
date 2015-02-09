@@ -1,0 +1,18 @@
+<table id="<%= table_id %>" class="no-border blue">
+  <thead class="no-border">
+  <tr>
+    <th style="width:50%;">Position</th>
+    <th>Due Date</th>
+    <th class="text-right">Application</th>
+  </tr>
+  </thead>
+  <tbody class="no-border-x">
+  <% jobs.each do |job|  %>
+      <tr>
+        <td style="width:30%;"><%= job.title %></td>
+        <td><%= job.application_deadline %></td>
+        <td class="text-right"><span class="badge badge-<%= application_count_by_job(job) > 0 ? 'success' : 'warning' %>"><%= application_count_by_job(job) %></span></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
