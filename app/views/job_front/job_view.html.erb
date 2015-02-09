@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+<div class="col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
   <div class="block-flat">
     <% if @job.present? %>
       <div class="header">
@@ -23,7 +23,12 @@
 
           <tr>
             <td colspan="2">
-              <button class="btn btn-flat btn-primary pull-right"><i class="fa fa-check"></i> Apply for this position </button>
+              <a href="<%= job_front_url(@job.job_category_id) %>" class="btn btn-flat btn-info"><i class="fa fa-arrow-circle-left"></i> Back </a>
+              <% if @already_applied %>
+                  <button type="button" class="btn btn-flat btn-danger pull-right">Already applied <i class="fa fa-arrow-circle-o-right"></i>  </button>
+              <% else %>
+                  <a href="<%= submit_job_application_url(@job.id) %>" class="btn btn-flat btn-primary pull-right">Apply for this position <i class="fa fa-arrow-circle-o-right"></i>  </a>
+            <% end %>
             </td>
           </tr>
 
