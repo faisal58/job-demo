@@ -1,6 +1,7 @@
 class ProfileController < ApplicationController
 
   include ApplicationHelper
+  before_action :authenticate_user!
 
   def my_profile
     if is_seeker?

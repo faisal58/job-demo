@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   patch 'profile/update' => 'profile#update',  :as => "update_profile"
   post 'profile/store' => 'profile#store',  :as => "store_profile"
 
+  # get 'positions' => 'job_front#index'
+  resources :job_front, path: 'positions', :only => [ :index, :show ]
+  get 'view/job/:id' => 'job_front#job_view', :as => "view_job_by_id"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

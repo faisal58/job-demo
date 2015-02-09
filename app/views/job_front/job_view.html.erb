@@ -1,0 +1,38 @@
+<div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+  <div class="block-flat">
+    <% if @job.present? %>
+      <div class="header">
+        <h3><%= @job.title %> <span class="label label-danger pull-right"> BDT :  <%= @job.salary_range %> </span></h3>
+      </div>
+      <div class="content">
+        <table class="no-border">
+          <tr>
+            <td><span class=""> Deadline </span></td>
+            <td><%= @job.application_deadline %></td>
+          </tr>
+
+          <tr>
+            <td><span class=""> Location </span></td>
+            <td><%= @job.location %></td>
+          </tr>
+
+          <tr>
+            <td><span class=""> Description </span></td>
+            <td><%= @job.description.length == 0 ? ' no description available   ' : @job.description %></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button class="btn btn-flat btn-primary pull-right"><i class="fa fa-check"></i> Apply for this position </button>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    <% else %>
+      <h5 class="alert r-alert">
+        Job no longer available
+      </h5>
+    <% end %>
+  </div>
+</div>
