@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="block-flat">
+      <div class="page-header">
+        <h2 class="text-center text-success"><i class="fa fa-user"></i> My Profile
+          <%= link_to :create_profile, :class => "btn btn-primary pull-right" do  %>
+            <i class="fa fa-pencil"></i> Edit
+          <% end %></h2>
+      </div>
+      <div class="content">
+        <h3 class="text-warning"><%= @profile.first_name %> <%= @profile.last_name %></h3>
+        <hr/>
+        <p><span class="label label-danger">Career Objective : </span> <span class="pull-right"><%= @profile.objective %></span> </p>
+        <hr/>
+        <h2 class="label label-danger">Career Overview : </h2>
+        <p><%= @profile.career_overview %></p>
+        <hr/>
+        <p><span class="label label-danger"> Expected Salary :  </span> <span class="pull-right badge badge-success"><%= @profile.expected_salary %></span></p>
+
+      </div>
+    </div>
+  </div>
+</div>

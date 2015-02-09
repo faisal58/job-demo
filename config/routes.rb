@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   get 'jobs' => 'job#index'
   post 'jobs' => 'job#new'
 
+  get 'profile' => 'profile#my_profile', :as => "profile"
+  get 'profile/modify' => 'profile#create',  :as => "create_profile"
+  patch 'profile/update' => 'profile#update',  :as => "update_profile"
+  post 'profile/store' => 'profile#store',  :as => "store_profile"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

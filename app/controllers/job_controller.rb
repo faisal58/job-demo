@@ -10,7 +10,7 @@ class JobController < ApplicationController
       #all open jobs
       @open_jobs = find_open_jobs(@jobs)
       #create new job
-      @job = Job.new
+      @job = current_user.jobs.new
       @job_categories = JobCategory.all
     else
       flash[:notice] = " Access forbidden, only employer can access this portions "
@@ -32,8 +32,7 @@ class JobController < ApplicationController
   private
 
   def new_permit_params
-    params[:job][:user_id] = current_user.id
-    params.require(:job).permit(:user_id, :job_category_id, :title, :location, :description, :salary_range, :application_deadline)
+    params.require(:job).permit(:job_category_id, :title, :location, :description, :salary_range, :application_deadline)
   end
 
 end

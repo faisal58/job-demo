@@ -1,0 +1,5 @@
+<% if is_employer? %>
+    <%= render 'profile/_partial/employer' %>
+<% elsif is_seeker? %>
+    <%= render 'profile/_partial/seeker' %>
+<% end %>

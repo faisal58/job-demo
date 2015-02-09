@@ -35,3 +35,20 @@ var nano = function (template, data) {
         return (typeof v !== "undefined" && v !== null) ? v : "";
     });
 };
+
+var process_error_to_html_form = function(prefix, errors, form) {
+    form.find('div.form-group').removeClass('has-error').find('span.help-block').empty();
+    $.each(errors, function(k,v) {
+        var selector = $('#' + prefix + k);
+        selector.next('span.help-block').html('<strong>' + k + '</strong>  ' + v + ' ');
+        selector.parent().parent().addClass('has-error');
+    });
+};
+
+var reset_form = function(form) {
+    form.find("input, textarea").val("");
+};
+
+var activeTab = function(tabname) {
+    $('.nav-tabs a[href="#' + tabname + '"]').tab('show');
+};
